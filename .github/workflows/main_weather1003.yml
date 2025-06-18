@@ -2,7 +2,7 @@
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 # More info on Python, GitHub Actions, and Azure App Service: https://aka.ms/python-webapps-actions
 
-name: Build and deploy Python app to Azure Web App - weatherapi1003Rcw
+name: Build and deploy Python app to Azure Web App - weather1003
 
 on:
   push:
@@ -22,7 +22,7 @@ jobs:
       - name: Set up Python version
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.10'
 
       - name: Create and start virtual environment
         run: |
@@ -66,14 +66,14 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_F1CAFFC657494DFFB6783DB2BE421611 }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_372D192F94B94378B301819B30E186B4 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_6D952EC1940842B7B66EC415F25E4EC5 }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_CF4EA5239CE746CCA28615970BA5CC54 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_CE85CC8907864A3E96BAF137B9962BCB }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_E61B1FDBC3564D38B026EB78E46E7D1B }}
 
       - name: 'Deploy to Azure Web App'
         uses: azure/webapps-deploy@v3
         id: deploy-to-webapp
         with:
-          app-name: 'weatherapi1003Rcw'
+          app-name: 'weather1003'
           slot-name: 'Production'
           
